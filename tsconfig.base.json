@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@patch-ritual/domain/*": ["packages/domain/src/*"],
+      "@patch-ritual/db/*": ["packages/db/src/*"],
+      "@patch-ritual/github/*": ["packages/github/src/*"],
+      "@patch-ritual/ritual-engine/*": ["packages/ritual-engine/src/*"],
+      "@patch-ritual/ui/*": ["packages/ui/src/*"],
+      "@patch-ritual/validation/*": ["packages/validation/src/*"]
+    }
+  }
+}

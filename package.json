@@ -1,0 +1,12 @@
+{
+  "name": "patch-ritual",
+  "private": true,
+  "packageManager": "pnpm@10",
+  "scripts": {
+    "dev": "pnpm --filter @patch-ritual/web dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test"
+  }
+}
