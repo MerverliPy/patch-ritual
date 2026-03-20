@@ -1,7 +1,7 @@
 # phase-progress.md
 
 ## Phase 0
-Status: planned
+Status: complete — verified 2026-03-20
 
 ## Phase 1
 Status: not started

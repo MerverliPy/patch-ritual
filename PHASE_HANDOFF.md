@@ -1,23 +1,21 @@
 # PHASE_HANDOFF.md
 
 ## Session Summary
-Initial starter pack prepared. No implementation session has run yet.
+Phase 0 complete. Scaffolded apps/web (Next.js 15) and all package stubs. Typecheck passes clean.
 
 ## Resume From
-Phase 0
+Phase 1 — Auth, Repository Selection, Release Import
 
 ## Exact Next Step
-Create the repository skeleton from `phases/phase-00-skeleton/PLAN.md`.
+Read phases/phase-01-auth-release-import/PLAN.md and begin GitHub OAuth implementation.
 
 ## Watchouts
-- keep MVP tightly constrained
-- do not add extra integrations
-- do not introduce a worker or queue in Phase 0
-- do not let docs duplicate each other
+- keep MVP tightly constrained — no extra integrations
+- do not introduce a worker or queue before Phase 4
+- ORM choice for packages/db not yet locked — decide in Phase 1
+- auth provider is GitHub OAuth only in MVP
 
 ## Files To Read First
 1. `CLAUDE.md`
-2. `PRD.md`
-3. `ROADMAP.md`
-4. `STATE.md`
-5. `phases/phase-00-skeleton/PLAN.md`
+2. `STATE.md`
+3. `phases/phase-01-auth-release-import/PLAN.md`

@@ -1,22 +1,23 @@
 # STATE.md
 
 ## Current Phase
-Phase 0 — Repo Operating System + Skeleton
+Phase 1 — Auth, Repository Selection, Release Import
 
 ## Current Status
-Planned. Starter pack created. Repo execution has not started.
+Phase 0 complete and verified. Ready to begin Phase 1 implementation.
 
 ## Last Completed
-- Product idea refined into MVP constraints
-- Claude Code operating system drafted
-- Phase structure drafted
+- Repo skeleton created and verified
+- apps/web scaffolded as minimal Next.js 15 app
+- All packages (db, domain, github, ritual-engine, ui, validation) have valid package.json + tsconfig + src/index.ts
+- pnpm workspace valid; `pnpm -r typecheck` passes clean
+- All Phase 0 acceptance criteria met
 
 ## Next High-Leverage Actions
-1. Create repository and copy this starter pack
-2. Scaffold `apps/web`
-3. Create package boundaries from Phase 0
-4. Complete Phase 0 verification
-5. Start Phase 1 implementation
+1. Begin Phase 1: GitHub OAuth sign-in
+2. Repository selection flow
+3. Release list and import
+4. Draft release object persisted in storage
 
 ## Open Decisions
 - ORM choice inside `packages/db`
