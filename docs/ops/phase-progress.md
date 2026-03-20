@@ -4,7 +4,10 @@
 Status: complete — verified 2026-03-20
 
 ## Phase 1
-Status: not started
+Status: in progress
+- Slice 1 (domain types) — complete 2026-03-20
+- Slice 2 (auth provider + ORM decision) — next
+- Slices 3–8 — pending
 
 ## Phase 2
 Status: not started

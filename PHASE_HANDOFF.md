@@ -1,19 +1,19 @@
 # PHASE_HANDOFF.md
 
 ## Session Summary
-Phase 0 complete. Scaffolded apps/web (Next.js 15) and all package stubs. Typecheck passes clean.
+Phase 1 Slice 1 complete. Domain types (Creator, Project, Release, SourceItem) defined in `packages/domain/src/index.ts`. Workspace typecheck passes clean.
 
 ## Resume From
-Phase 1 — Auth, Repository Selection, Release Import
+Phase 1 Slice 2 — lock auth provider + ORM, install packages
 
 ## Exact Next Step
-Read phases/phase-01-auth-release-import/PLAN.md and begin GitHub OAuth implementation.
+Decide and install: auth library (NextAuth/Auth.js for GitHub OAuth) and ORM (Drizzle or Prisma) for `packages/db`. No implementation yet — just lock choices and add dependencies.
 
 ## Watchouts
-- keep MVP tightly constrained — no extra integrations
-- do not introduce a worker or queue before Phase 4
-- ORM choice for packages/db not yet locked — decide in Phase 1
 - auth provider is GitHub OAuth only in MVP
+- do not introduce a worker or queue before Phase 4
+- keep MVP tightly constrained — no extra integrations
+- pnpm version warning (`"10" is not a valid version`) — cosmetic now but watch for lockfile issues
 
 ## Files To Read First
 1. `CLAUDE.md`
