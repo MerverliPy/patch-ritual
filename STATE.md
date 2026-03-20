@@ -4,18 +4,19 @@
 Phase 1 — Auth, Repository Selection, Release Import
 
 ## Current Status
-Phase 1 in progress — Slice 1 (domain types) complete.
+Phase 1 in progress — Slice 2 (GitHub auth wiring) complete.
 
 ## Last Completed
 - Phase 0: repo skeleton, typecheck clean
 - Phase 1 Slice 1: `packages/domain/src/index.ts` exports Creator, Project, Release, SourceItem — workspace typecheck passes
+- Phase 1 Slice 2: next-auth@beta installed, GitHub OAuth configured, route handler and middleware created, typecheck and build clean
 
 ## Next High-Leverage Actions
-1. Slice 2: lock auth provider (GitHub OAuth) + ORM choice, install packages
+1. Slice 3: GitHub adapter — fetch repos and releases for authenticated user (packages/github)
+2. Lock ORM choice for packages/db and add draft persistence
 
 ## Open Decisions
 - ORM choice inside `packages/db`
-- auth provider library (NextAuth / Auth.js)
 - storage provider for cover media
 - completion metric definition for analytics
 
