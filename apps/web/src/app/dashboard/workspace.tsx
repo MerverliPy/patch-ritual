@@ -138,7 +138,12 @@ export default function Workspace({ login }: { login: string }) {
                 {release.draft && <> [draft]</>}
                 {release.prerelease && <> [pre-release]</>}
                 {importResult?.releaseId === release.id ? (
-                  <> ✓ imported (draft {importResult.draftId})</>
+                  <>
+                    {" ✓ imported — "}
+                    <a href={`/dashboard/draft/${importResult.draftId}`}>
+                      Frame this release
+                    </a>
+                  </>
                 ) : (
                   <button
                     onClick={() => importRelease(selectedRepo!, release)}
