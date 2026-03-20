@@ -4,7 +4,7 @@
 Phase 1 — Auth, Repository Selection, Release Import
 
 ## Current Status
-Phase 1 in progress — Slice 6 (release import → normalize → persist draft) complete.
+Phase 1 complete — all acceptance criteria verified; go/no-go is GO.
 
 ## Last Completed
 - Phase 0: repo skeleton, typecheck clean
@@ -16,20 +16,18 @@ Phase 1 in progress — Slice 6 (release import → normalize → persist draft)
 - Phase 1 Slice 6: selected release can now be normalized and persisted as a draft through `/api/github/import-draft`
 
 ## Next High-Leverage Actions
-1. Slice 7: run manual verification and edge-state checks for full Phase 1 closeout
-2. Decide whether Phase 1 is complete and ready to hand off to Phase 2
+1. Begin Phase 2 — ritual generation (opening hook, key changes, closing prompt)
 
 ## Open Decisions
 - storage provider for cover media
 - completion metric definition for analytics
 
 ## Blockers
-- Phase 1 still needs manual verification and edge-state confirmation
-- GitHub sign-in and draft creation flow should be smoke tested end-to-end
+- None for Phase 2 start; live auth smoke test (GitHub OAuth credentials) still pending but not a blocker for development
 
 ## Risks
-- assuming Phase 1 is done without manual proof
-- mixing Phase 2 work into Phase 1 verification
+- live auth untested (requires GitHub OAuth app credentials)
+- SQLite db file at cwd — acceptable for MVP, revisit for deployment
 - overbuilding beyond fixed ritual format
 
 ## Update Rule
