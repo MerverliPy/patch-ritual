@@ -1,31 +1,40 @@
 # PHASE_HANDOFF.md
 
 ## Session Summary
-Phase 1 Slice 2 complete. GitHub OAuth auth wiring added to apps/web via Auth.js v5 (next-auth@beta). Workspace typecheck and web build both pass clean.
+Phase 1 Slice 3 complete. Auth.js session now exposes the GitHub access token, and `packages/github` contains the authenticated GitHub adapter for repository and release listing. Workspace typecheck and web build both pass clean.
 
 ## What Was Done
-- Installed `next-auth@beta` (5.0.0-beta.30) in `apps/web`
-- Created `apps/web/auth.ts` — NextAuth configured with GitHub provider, exports handlers/signIn/signOut/auth
-- Created `apps/web/src/app/api/auth/[...nextauth]/route.ts` — exports GET/POST from handlers
-- Created `apps/web/middleware.ts` — protects `/dashboard/*`, redirects unauthenticated to `/api/auth/signin`
-- Updated `apps/web/tsconfig.json` include to cover root-level `*.ts` files
-- Created `.env.example` at repo root with AUTH_SECRET, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET
+- Updated `apps/web/auth.ts`
+  - added JWT callback
+  - persisted `account.access_token` into `token.accessToken`
+  - exposed access token via session callback as `session.accessToken`
+  - augmented `next-auth` Session type for this access token
+- Implemented `packages/github/src/index.ts`
+  - added `GitHubRepo` and `GitHubRelease` types
+  - added private `ghFetch<T>` helper
+  - added `listRepos(accessToken)`
+  - added `listReleases(accessToken, repoFullName)`
+- Verified:
+  - `pnpm typecheck`
+  - `pnpm --filter @patch-ritual/web build`
 
 ## Resume From
-Phase 1 Slice 3 — GitHub integration adapter in `packages/github`
+Phase 1 Slice 4 — DB schema and draft persistence boundary in `packages/db`
 
 ## Exact Next Step
-Build the GitHub adapter: authenticated fetch for user repos and release list. Session will provide the GitHub access token via Auth.js callbacks.
+Choose the ORM for `packages/db`, define the minimum draft persistence shape for imported releases, and implement the smallest persistence boundary needed for Phase 1.
 
 ## Watchouts
-- Session does not yet expose the GitHub access token — need to wire `account.access_token` into the JWT callback in `auth.ts` before the GitHub adapter can call the API on behalf of the user
-- Creator domain type is not yet wired to the session (intentionally deferred)
-- auth provider is GitHub OAuth only in MVP
-- do not introduce a worker or queue before Phase 4
-- pnpm version warning (`"10" is not a valid version`) — cosmetic, lockfile is fine
+- Keep persistence minimal: only what Phase 1 needs for imported release draft storage
+- Do not start repository selection UI until the persistence shape is clear
+- Do not introduce a worker or queue before Phase 4
+- Keep GitHub OAuth as the only auth provider in MVP
+- Avoid letting ORM setup become an architecture tax
 
 ## Files To Read First
 1. `CLAUDE.md`
 2. `STATE.md`
 3. `phases/phase-01-auth-release-import/PLAN.md`
-4. `apps/web/auth.ts`
+4. `packages/db/package.json`
+5. `packages/db/src/index.ts`
+6. `packages/domain/src/index.ts`
