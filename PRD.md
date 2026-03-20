@@ -1,10 +1,15 @@
 # PRD.md
 
+> Narrative product framing only. Default execution and planning should use `REQUIREMENTS.md`, `ROADMAP.md`, `STATE.md`, and the active phase plan. Read this file only when extra product context is needed.
+
 ## Product
 Patch Ritual
 
 ## Summary
 Patch Ritual is a GitHub-connected release publishing tool for solo indie creators. It transforms a shipped update into a short, branded, public release experience that fans can explore and react to.
+
+## One-line description
+Turn patch notes into a launch moment.
 
 ## Problem
 Patch notes and release posts are usually flat, forgettable, and overly technical. Creators who ship often need a faster way to make each update feel memorable without turning release day into extra admin work.

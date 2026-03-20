@@ -18,7 +18,6 @@ Enable one creator to sign in with GitHub, select one repository, view releases,
 - extra integrations
 
 ## Inputs
-- `PRD.md`
 - `REQUIREMENTS.md`
 - `packages/github`
 - `packages/domain`

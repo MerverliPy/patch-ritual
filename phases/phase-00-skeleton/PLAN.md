@@ -19,7 +19,6 @@ Create the repo operating system, technical skeleton, and Claude Code artifact p
 - audience pages
 
 ## Inputs
-- `PRD.md`
 - `REQUIREMENTS.md`
 - `ROADMAP.md`
 

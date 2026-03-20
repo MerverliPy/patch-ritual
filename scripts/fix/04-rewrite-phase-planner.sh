@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cat > .claude/agents/phase-planner.md <<'OUT'
 ---
 name: phase-planner
 description: Use for converting roadmap items into small executable phase plans with deliverables, waves, acceptance criteria, and verification.
@@ -29,3 +33,6 @@ Rules:
 - Do not drift outside MVP constraints unless the roadmap already moved post-MVP.
 - Prefer explicit deliverables over generic tasks.
 - Update phase files only when asked.
+OUT
+
+echo "Rewrote .claude/agents/phase-planner.md"

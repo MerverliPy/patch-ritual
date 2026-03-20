@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cat > CLAUDE.md <<'OUT'
 # CLAUDE.md
 
 ## Scope
@@ -46,3 +50,6 @@ Read these first unless the task is extremely local:
 - Push volatile detail into phase files.
 - Summarize decisions; do not preserve long transcripts.
 - Prune stale plans, dead workflow artifacts, and duplicate guidance.
+OUT
+
+echo "Rewrote CLAUDE.md"

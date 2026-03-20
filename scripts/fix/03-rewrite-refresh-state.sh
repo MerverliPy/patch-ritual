@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cat > .claude/skills/refresh-state/SKILL.md <<'OUT'
 ---
 name: refresh-state
 description: Update durable memory files after meaningful progress.
@@ -23,3 +27,6 @@ Rules:
 - do not maintain duplicate current-status text in multiple files
 - record decisions only when architecture changed
 - record issues only when a durable constraint changed
+OUT
+
+echo "Rewrote .claude/skills/refresh-state/SKILL.md"

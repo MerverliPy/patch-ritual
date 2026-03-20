@@ -18,7 +18,7 @@
 | `pnpm -r typecheck` clean | PASS |
 
 ## Risk Notes
-- COMPACT_CONTEXT.md and PROJECT.md partially overlap PRD.md — minor, not blocking. Use prune-context skill when convenient.
+- Phase 0 bootstrap artifacts were later slimmed and archived. Current execution uses the lean root-doc and state model.
 
 ## Commands Verified
 ```

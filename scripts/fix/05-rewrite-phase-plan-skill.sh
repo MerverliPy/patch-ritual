@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cat > .claude/skills/phase-plan/SKILL.md <<'OUT'
 ---
 name: phase-plan
 description: Create or refresh an execution-ready plan for one roadmap phase.
@@ -28,3 +32,6 @@ Workflow:
 4. Keep the plan small enough for fresh-context execution.
 5. Call out likely conflict files and bottlenecks.
 6. Return the minimal next build slice.
+OUT
+
+echo "Rewrote .claude/skills/phase-plan/SKILL.md"

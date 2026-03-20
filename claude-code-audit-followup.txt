@@ -1,0 +1,1074 @@
+# REPO ROOT
+/home/calvin/patch-ritual
+
+# FALLBACK TREE (maxdepth 4)
+.
+./.claude
+./.claude/agents
+./.claude/agents/implementation-builder.md
+./.claude/agents/phase-planner.md
+./.claude/agents/repo-architect.md
+./.claude/agents/verifier.md
+./.claude/settings.json
+./.claude/settings.local.example.json
+./.claude/settings.local.json
+./.claude/skills
+./.claude/skills/phase-plan
+./.claude/skills/phase-plan/SKILL.md
+./.claude/skills/prune-context
+./.claude/skills/prune-context/SKILL.md
+./.claude/skills/refresh-state
+./.claude/skills/refresh-state/SKILL.md
+./.claude/skills/ship-slice
+./.claude/skills/ship-slice/SKILL.md
+./.claude/skills/verify-phase
+./.claude/skills/verify-phase/SKILL.md
+./.editorconfig
+./.env.example
+./.gitignore
+./CLAUDE.md
+./COMPACT_CONTEXT.md
+./PHASE_HANDOFF.md
+./PRD.md
+./PROJECT.md
+./README.md
+./REPO_BLUEPRINT.md
+./REQUIREMENTS.md
+./ROADMAP.md
+./STATE.md
+./apps
+./apps/web
+./apps/web/.next
+./apps/web/.next/BUILD_ID
+./apps/web/.next/app-build-manifest.json
+./apps/web/.next/app-path-routes-manifest.json
+./apps/web/.next/build-manifest.json
+./apps/web/.next/cache
+./apps/web/.next/diagnostics
+./apps/web/.next/export-marker.json
+./apps/web/.next/images-manifest.json
+./apps/web/.next/next-minimal-server.js.nft.json
+./apps/web/.next/next-server.js.nft.json
+./apps/web/.next/package.json
+./apps/web/.next/prerender-manifest.json
+./apps/web/.next/react-loadable-manifest.json
+./apps/web/.next/required-server-files.json
+./apps/web/.next/routes-manifest.json
+./apps/web/.next/server
+./apps/web/.next/static
+./apps/web/.next/trace
+./apps/web/.next/types
+./apps/web/README.md
+./apps/web/auth.ts
+./apps/web/middleware.ts
+./apps/web/next-env.d.ts
+./apps/web/next.config.ts
+./apps/web/node_modules
+./apps/web/node_modules/.bin
+./apps/web/node_modules/@types
+./apps/web/node_modules/next
+./apps/web/node_modules/next-auth
+./apps/web/node_modules/react
+./apps/web/node_modules/react-dom
+./apps/web/node_modules/typescript
+./apps/web/package.json
+./apps/web/public
+./apps/web/public/.gitkeep
+./apps/web/src
+./apps/web/src/app
+./apps/web/tsconfig.json
+./apps/web/tsconfig.tsbuildinfo
+./claude-code-audit-followup.txt
+./docs
+./docs/decisions
+./docs/decisions/decision-log.md
+./docs/ops
+./docs/ops/known-issues.md
+./docs/ops/phase-progress.md
+./docs/verification
+./docs/verification/README.md
+./docs/verification/phase-00-skeleton.md
+./docs/verification/phase-01-auth-release-import.md
+./infra
+./infra/db
+./infra/db/README.md
+./infra/storage
+./infra/storage/README.md
+./package.json
+./packages
+./packages/db
+./packages/db/README.md
+./packages/db/node_modules
+./packages/db/node_modules/.bin
+./packages/db/node_modules/typescript
+./packages/db/package.json
+./packages/db/src
+./packages/db/src/.gitkeep
+./packages/db/src/index.ts
+./packages/db/tsconfig.json
+./packages/domain
+./packages/domain/README.md
+./packages/domain/node_modules
+./packages/domain/node_modules/.bin
+./packages/domain/node_modules/typescript
+./packages/domain/package.json
+./packages/domain/src
+./packages/domain/src/.gitkeep
+./packages/domain/src/index.ts
+./packages/domain/tsconfig.json
+./packages/github
+./packages/github/README.md
+./packages/github/node_modules
+./packages/github/node_modules/.bin
+./packages/github/node_modules/typescript
+./packages/github/package.json
+./packages/github/src
+./packages/github/src/.gitkeep
+./packages/github/src/index.ts
+./packages/github/tsconfig.json
+./packages/ritual-engine
+./packages/ritual-engine/README.md
+./packages/ritual-engine/node_modules
+./packages/ritual-engine/node_modules/.bin
+./packages/ritual-engine/node_modules/typescript
+./packages/ritual-engine/package.json
+./packages/ritual-engine/src
+./packages/ritual-engine/src/.gitkeep
+./packages/ritual-engine/src/index.ts
+./packages/ritual-engine/tsconfig.json
+./packages/ui
+./packages/ui/README.md
+./packages/ui/node_modules
+./packages/ui/node_modules/.bin
+./packages/ui/node_modules/typescript
+./packages/ui/package.json
+./packages/ui/src
+./packages/ui/src/.gitkeep
+./packages/ui/src/index.ts
+./packages/ui/tsconfig.json
+./packages/validation
+./packages/validation/README.md
+./packages/validation/node_modules
+./packages/validation/node_modules/.bin
+./packages/validation/node_modules/typescript
+./packages/validation/package.json
+./packages/validation/src
+./packages/validation/src/.gitkeep
+./packages/validation/src/index.ts
+./packages/validation/tsconfig.json
+./phases
+./phases/phase-00-skeleton
+./phases/phase-00-skeleton/PLAN.md
+./phases/phase-01-auth-release-import
+./phases/phase-01-auth-release-import/PLAN.md
+./phases/phase-02-creator-draft-and-ritual-generation
+./phases/phase-02-creator-draft-and-ritual-generation/PLAN.md
+./phases/phase-03-public-publishing-loop
+./phases/phase-03-public-publishing-loop/PLAN.md
+./phases/phase-04-engagement-analytics-hardening
+./phases/phase-04-engagement-analytics-hardening/PLAN.md
+./phases/phase-05-post-mvp-differentiation
+./phases/phase-05-post-mvp-differentiation/PLAN.md
+./pnpm-lock.yaml
+./pnpm-workspace.yaml
+./tsconfig.base.json
+
+# CLAUDE / AGENT FILE INDEX
+./CLAUDE.md
+./COMPACT_CONTEXT.md
+./PHASE_HANDOFF.md
+./PROJECT.md
+./REQUIREMENTS.md
+./ROADMAP.md
+./STATE.md
+./docs/decisions/decision-log.md
+./docs/ops/known-issues.md
+
+# IMPORTANT ROOT / DOC FILES
+
+===== FILE: ./CLAUDE.md =====
+# CLAUDE.md
+
+## Project Purpose
+Build Patch Ritual as a GitHub-connected release publishing tool for solo indie creators. MVP transforms one shipped release into one short branded ritual page that fans can explore and react to.
+
+## Working Rules
+- Stay inside the MVP defined in `PRD.md` and `REQUIREMENTS.md`.
+- Optimize for the shortest path to the core loop:
+  sign in -> select repo -> import release -> shape ritual -> publish -> react -> review analytics
+- Prefer TypeScript-first implementation.
+- Prefer editing existing files over creating new files.
+- Keep ceremony low. Do not introduce team-scale process for solo-builder work.
+- Do not add extra integrations, live launch rooms, or marketplace features in MVP phases.
+
+## Repo Priorities
+1. Working creator-to-audience MVP loop
+2. Fast publish workflow under 5 minutes
+3. Clear file boundaries and resumable phase execution
+4. Strong verification before moving phases
+5. Minimal context load and minimal duplicate instructions
+
+## File Boundaries
+- `PRD.md` = product truth
+- `REQUIREMENTS.md` = scope, acceptance mapping, non-goals
+- `ROADMAP.md` = phase order and outcomes
+- `STATE.md` = current position, blockers, next steps
+- `PHASE_HANDOFF.md` = resume notes after each meaningful session
+- `phases/*/PLAN.md` = execution plan for one phase
+- `docs/verification/*` = proof that a phase actually works
+- `docs/decisions/decision-log.md` = architectural decisions
+- `.claude/agents/*` = specialist subagents
+- `.claude/skills/*` = repeatable Claude Code workflows
+
+## Implementation Rules
+- Work one phase at a time unless the active phase explicitly allows safe parallel waves.
+- Keep the ritual format constrained in MVP:
+  - opening hook
+  - key changes
+  - closing prompt
+- Keep the audience experience short: 60 to 120 seconds.
+- Keep creator review mandatory before publish.
+- Add packages only when they pay for themselves within the active phase.
+- Default to server-side simplicity before introducing workers or queues.
+- Do not introduce MCP servers unless a concrete workflow requires one.
+
+## Verification Rules
+- Define acceptance criteria before implementation.
+- Treat "implemented" and "verified" as different states.
+- Run the narrowest useful checks first.
+- Record verification outcomes in `docs/verification/`.
+- Update `STATE.md` and `PHASE_HANDOFF.md` after meaningful progress.
+
+## Documentation Rules
+- Keep root docs compact.
+- Push volatile detail into phase files.
+- Prune stale plans, dead commands, and duplicate notes.
+- Summarize decisions; do not preserve long chat transcripts in repo files.
+
+===== FILE: ./COMPACT_CONTEXT.md =====
+# COMPACT_CONTEXT.md
+
+Patch Ritual is a release experience platform for solo indie creators.
+
+MVP loop:
+GitHub sign-in -> select one repo -> select one release -> add vibe input -> generate ritual -> edit -> publish -> audience reacts -> creator reviews analytics.
+
+MVP constraints:
+- one creator
+- one repo
+- one release
+- one ritual format
+- GitHub only
+- no live events
+- no team features
+- no extra integrations
+- short ritual
+- fast publish workflow
+
+Fixed ritual structure:
+1. opening hook
+2. key changes
+3. closing prompt
+
+Repo operating model:
+- compact `CLAUDE.md`
+- file-based state
+- phase plans under `phases/`
+- thin orchestrator + few subagents
+- skills for repeatable workflows
+- verification files per phase
+
+Default build posture:
+- TypeScript-first
+- Next.js app in `apps/web`
+- shared packages only where they reduce coupling
+- keep AI assistive and editable
+- no worker until Phase 4 pressure proves the need
+
+===== FILE: ./PHASE_HANDOFF.md =====
+# PHASE_HANDOFF.md
+
+## Session Summary
+Phase 1 Slice 2 complete. GitHub OAuth auth wiring added to apps/web via Auth.js v5 (next-auth@beta). Workspace typecheck and web build both pass clean.
+
+## What Was Done
+- Installed `next-auth@beta` (5.0.0-beta.30) in `apps/web`
+- Created `apps/web/auth.ts` — NextAuth configured with GitHub provider, exports handlers/signIn/signOut/auth
+- Created `apps/web/src/app/api/auth/[...nextauth]/route.ts` — exports GET/POST from handlers
+- Created `apps/web/middleware.ts` — protects `/dashboard/*`, redirects unauthenticated to `/api/auth/signin`
+- Updated `apps/web/tsconfig.json` include to cover root-level `*.ts` files
+- Created `.env.example` at repo root with AUTH_SECRET, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET
+
+## Resume From
+Phase 1 Slice 3 — GitHub integration adapter in `packages/github`
+
+## Exact Next Step
+Build the GitHub adapter: authenticated fetch for user repos and release list. Session will provide the GitHub access token via Auth.js callbacks.
+
+## Watchouts
+- Session does not yet expose the GitHub access token — need to wire `account.access_token` into the JWT callback in `auth.ts` before the GitHub adapter can call the API on behalf of the user
+- Creator domain type is not yet wired to the session (intentionally deferred)
+- auth provider is GitHub OAuth only in MVP
+- do not introduce a worker or queue before Phase 4
+- pnpm version warning (`"10" is not a valid version`) — cosmetic, lockfile is fine
+
+## Files To Read First
+1. `CLAUDE.md`
+2. `STATE.md`
+3. `phases/phase-01-auth-release-import/PLAN.md`
+4. `apps/web/auth.ts`
+
+===== FILE: ./PROJECT.md =====
+# PROJECT.md
+
+## Name
+Patch Ritual
+
+## Category
+Release experience platform
+
+## One-line description
+Turn patch notes into a launch moment.
+
+## Core user
+Solo indie creator with a small but engaged community.
+
+## Core loop
+Ship update -> generate ritual -> publish -> share -> community reacts
+
+## MVP promise
+A solo creator connects GitHub, selects a release, adds a bit of vibe input, and publishes a short branded release ritual that fans can explore and react to.
+
+## Product posture
+Not a changelog generator.
+Not a community platform.
+Not a website builder.
+Not a devops tool.
+
+## Success signal
+Creators publish repeatedly because the ritual is faster and more memorable than normal patch notes.
+
+===== FILE: ./REQUIREMENTS.md =====
+# REQUIREMENTS.md
+
+## Goals
+- Prove the creator-to-audience ritual loop
+- Keep the MVP fast enough for real release behavior
+- Make the output feel branded and memorable without overbuilding the system
+- Keep implementation easy to resume in fresh Claude Code contexts
+
+## Non-Goals
+- multi-project administration
+- team workflows
+- multiple ritual formats
+- real-time launch events
+- enterprise account management
+
+## Core Constraints
+- one creator
+- one repository
+- one release
+- one ritual format
+- one public ritual page
+- lightweight audience response
+- manual creator review before publish
+- short consumption time
+- fast creator workflow
+
+## Requirement Map
+
+### R1 Authentication
+Creator signs in with GitHub.
+
+### R2 Repository Context
+Creator selects one repository.
+
+### R3 Release Discovery
+Creator can view and select releases.
+
+### R4 Release Import
+System imports available release metadata and summaries into a draft.
+
+### R5 Creator Framing
+Creator adds title, why-it-matters, optional note, theme, optional cover image.
+
+### R6 Ritual Generation
+System generates:
+- opening hook
+- key changes
+- closing prompt
+
+### R7 Creator Review
+Creator previews and edits draft.
+
+### R8 Publishing
+Creator publishes to a public URL and can republish after edits.
+
+### R9 Audience Experience
+Audience consumes the ritual on desktop and mobile web.
+
+### R10 Reactions
+Audience leaves lightweight reactions.
+
+### R11 Comments
+Audience leaves a simple comment.
+
+### R12 Analytics
+Creator sees views, reactions, comments, and a basic engagement signal.
+
+### R13 Workflow Quality
+Typical flow from release selection to publish stays under 5 minutes.
+
+## Deferred Work
+- creator archive
+- better social cards
+- saved creator defaults
+- voice note input
+- scheduled publish
+- richer analytics
+- extra themes
+- richer media moments
+
+## Definition of Done for MVP
+- creator can sign in with GitHub and select a repository
+- creator can import a release draft
+- creator can add framing inputs
+- system can generate a fixed-format ritual draft
+- creator can edit, preview, and publish
+- audience can open, react, and comment
+- creator can see basic metrics
+- publish workflow stays constrained and fast
+
+===== FILE: ./ROADMAP.md =====
+# ROADMAP.md
+
+## Phase 0 — Repo Operating System + Skeleton
+### Objective
+Create the Claude Code-native repo structure, memory system, and technical skeleton needed to execute the MVP without context drift.
+
+### Deliverables
+- root operating docs
+- `.claude/` settings, skills, and agents
+- monorepo folder skeleton
+- app/package boundaries
+- phase plans
+- initial verification templates
+
+### Outcome
+The repo is ready for fresh-context Claude Code execution.
+
+---
+
+## Phase 1 — Auth, Repository Selection, Release Import
+### Objective
+Establish one creator, one repo, one release draft.
+
+### Deliverables
+- GitHub sign-in
+- repository selection
+- release list
+- release import and normalization
+- draft release object persisted in storage
+
+### Outcome
+A creator can connect GitHub and create a usable release draft from real source data.
+
+---
+
+## Phase 2 — Creator Draft Flow + Ritual Generation
+### Objective
+Turn the imported release into an editable ritual draft.
+
+### Deliverables
+- creator input form
+- theme selection
+- optional cover image
+- ritual generation engine
+- draft preview and editing
+
+### Outcome
+A creator can shape and approve a ritual draft before publishing.
+
+---
+
+## Phase 3 — Public Ritual Publishing Loop
+### Objective
+Deliver the public audience-facing ritual experience.
+
+### Deliverables
+- public ritual page
+- publish flow
+- republish flow
+- shareable URL
+- mobile-safe presentation
+
+### Outcome
+A creator can publish a ritual and share it with fans.
+
+---
+
+## Phase 4 — Audience Response + Analytics + Workflow Hardening
+### Objective
+Complete the MVP feedback loop and validate it fits real release behavior.
+
+### Deliverables
+- reactions
+- comments / guestbook
+- basic analytics
+- completion / reach signal
+- speed tuning and friction removal
+- end-to-end verification
+
+### Outcome
+The product proves whether creators and audiences actually use the loop.
+
+---
+
+## Phase 5 — Post-MVP Differentiation
+### Objective
+Add the highest-value improvements only after the MVP loop works.
+
+### Deliverables
+- creator archive
+- better social sharing
+- saved creator defaults
+- better highlight ranking
+- optional voice note input
+
+### Outcome
+The product becomes more distinctive without changing its core shape.
+
+## Build Order
+1. Phase 0
+2. Phase 1
+3. Phase 2
+4. Phase 3
+5. Phase 4
+6. Phase 5 only after MVP signal
+
+## Stop Rules
+Do not start post-MVP work unless:
+- repeat publishing exists
+- creators share the ritual after real updates
+- audience reaction behavior is visible
+
+===== FILE: ./STATE.md =====
+# STATE.md
+
+## Current Phase
+Phase 1 — Auth, Repository Selection, Release Import
+
+## Current Status
+Phase 1 in progress — Slice 2 (GitHub auth wiring) complete.
+
+## Last Completed
+- Phase 0: repo skeleton, typecheck clean
+- Phase 1 Slice 1: `packages/domain/src/index.ts` exports Creator, Project, Release, SourceItem — workspace typecheck passes
+- Phase 1 Slice 2: next-auth@beta installed, GitHub OAuth configured, route handler and middleware created, typecheck and build clean
+
+## Next High-Leverage Actions
+1. Slice 3: GitHub adapter — fetch repos and releases for authenticated user (packages/github)
+2. Lock ORM choice for packages/db and add draft persistence
+
+## Open Decisions
+- ORM choice inside `packages/db`
+- storage provider for cover media
+- completion metric definition for analytics
+
+## Blockers
+- no runtime code scaffold yet
+- infra provider decisions not yet locked
+
+## Risks
+- overbuilding beyond fixed ritual format
+- adding background workers too early
+- mixing planning detail into root files
+
+## Update Rule
+Refresh this file after any meaningful planning milestone, phase completion, or architecture decision.
+
+===== FILE: ./docs/decisions/decision-log.md =====
+# decision-log.md
+
+## ADR-001
+### Decision
+Use a TypeScript-first monorepo with `apps/web` as the center of gravity.
+
+### Why
+The MVP is primarily a web product with integration-heavy flows and a public audience surface.
+
+### Consequence
+Keep shared packages small. Delay separate workers until they are forced by latency or media processing needs.
+
+## ADR-002
+### Decision
+Use a thin Claude Code orchestrator with a few specialists instead of many narrow subagents.
+
+### Why
+This reduces token overhead and coordination complexity for a solo-builder repo.
+
+### Consequence
+Only keep subagents that materially improve planning, implementation isolation, or verification.
+
+===== FILE: ./docs/ops/known-issues.md =====
+# known-issues.md
+
+## Current Known Issues
+- No runtime scaffold yet
+- Data model not finalized
+- Analytics completion metric not yet defined
+- Media storage provider not yet selected
+
+## Update Rule
+Use this file for real technical constraints and active problems.
+Do not use it for generic wishlists.
+
+# .claude FILE INDEX
+.claude/agents/implementation-builder.md
+.claude/agents/phase-planner.md
+.claude/agents/repo-architect.md
+.claude/agents/verifier.md
+.claude/settings.json
+.claude/settings.local.example.json
+.claude/settings.local.json
+.claude/skills/phase-plan/SKILL.md
+.claude/skills/prune-context/SKILL.md
+.claude/skills/refresh-state/SKILL.md
+.claude/skills/ship-slice/SKILL.md
+.claude/skills/verify-phase/SKILL.md
+
+# .claude/agents
+
+===== FILE: .claude/agents/implementation-builder.md =====
+---
+name: implementation-builder
+description: Use for building one small approved slice of the product from the active phase plan without expanding scope.
+tools: Read, Grep, Glob, Write, Edit, Bash
+model: sonnet
+maxTurns: 35
+---
+
+You are the Patch Ritual implementation builder.
+
+Mission:
+Implement one small slice from the active phase plan with minimal drift.
+
+Rules:
+- Read `CLAUDE.md`, `STATE.md`, the active phase plan, and affected package docs first.
+- Build only what the active phase requires.
+- Prefer end-to-end slices over disconnected partial code.
+- Keep the fixed ritual format intact.
+- Prefer simple server-side implementations before introducing async systems.
+- Update `STATE.md`, `PHASE_HANDOFF.md`, and verification files after meaningful progress when asked through the refresh workflow.
+- Do not add new infrastructure unless the active phase explicitly requires it.
+
+===== FILE: .claude/agents/phase-planner.md =====
+---
+name: phase-planner
+description: Use for converting roadmap items into small executable phase plans with deliverables, waves, acceptance criteria, and verification.
+tools: Read, Grep, Glob, Write, Edit
+model: sonnet
+permissionMode: plan
+maxTurns: 20
+---
+
+You are the Patch Ritual phase planner.
+
+Mission:
+Turn active roadmap items into fresh-context Claude Code execution plans.
+
+Rules:
+- Read `PRD.md`, `REQUIREMENTS.md`, `ROADMAP.md`, `STATE.md`, and the target phase file first.
+- Keep phases small enough for one focused execution window.
+- Define:
+  - objective
+  - scope
+  - non-goals
+  - inputs
+  - deliverables
+  - dependencies
+  - execution waves
+  - acceptance criteria
+  - verification
+- Do not drift outside MVP constraints unless the roadmap already moved post-MVP.
+- Prefer explicit deliverables over generic tasks.
+- Update phase files only when asked.
+
+===== FILE: .claude/agents/repo-architect.md =====
+---
+name: repo-architect
+description: Use for repo structure, file boundaries, package layout, documentation architecture, and Claude Code operating artifacts.
+tools: Read, Grep, Glob, Write, Edit
+model: sonnet
+maxTurns: 25
+---
+
+You are the Patch Ritual repo architect.
+
+Mission:
+Keep the repository easy to navigate, resume, and execute with low token cost.
+
+Rules:
+- Optimize for a solo builder.
+- Prefer a compact root context and layered memory.
+- Push volatile detail into phase files, not root docs.
+- Avoid package sprawl.
+- Avoid duplicate guidance across CLAUDE, skills, agents, and handoff files.
+- Keep the orchestrator thin and use specialists only when they clearly reduce context or improve isolation.
+- Recommend the smallest better structure, not the fanciest structure.
+
+===== FILE: .claude/agents/verifier.md =====
+---
+name: verifier
+description: Use for acceptance checks, test planning, UAT review, and phase readiness decisions.
+tools: Read, Grep, Glob, Bash
+model: sonnet
+maxTurns: 25
+---
+
+You are the Patch Ritual verifier.
+
+Mission:
+Decide whether a phase is actually done.
+
+Rules:
+- Verify against the phase acceptance criteria, not against vague quality language.
+- Separate implemented from verified.
+- Prefer evidence:
+  - tests
+  - typechecks
+  - screenshots
+  - manual UAT steps
+  - observable behavior
+- Report:
+  - passes
+  - fails
+  - risks
+  - missing proof
+  - go / no-go
+- Do not edit implementation files unless explicitly asked.
+
+# .claude/skills
+
+===== FILE: .claude/skills/phase-plan/SKILL.md =====
+---
+name: phase-plan
+description: Create or refresh an execution-ready plan for one roadmap phase.
+argument-hint: [phase-id]
+disable-model-invocation: true
+context: fork
+agent: phase-planner
+---
+
+Use this skill to create or refresh a phase plan.
+
+Arguments:
+- target phase id, for example `phase-01-auth-release-import`
+
+Workflow:
+1. Read `PRD.md`, `REQUIREMENTS.md`, `ROADMAP.md`, `STATE.md`, and `phases/$ARGUMENTS/PLAN.md` if it exists.
+2. Produce or update a plan with:
+   - objective
+   - scope
+   - non-goals
+   - inputs
+   - deliverables
+   - dependencies
+   - execution waves
+   - acceptance criteria
+   - verification
+3. Keep the plan small enough for fresh-context execution.
+4. Call out likely conflict files and bottlenecks.
+5. Return the minimal next build slice.
+
+===== FILE: .claude/skills/prune-context/SKILL.md =====
+---
+name: prune-context
+description: Reduce token waste by pruning stale docs, duplicate guidance, and dead workflow artifacts.
+disable-model-invocation: true
+allowed-tools: Read, Write, Edit, Grep, Glob
+---
+
+Use this skill when the repo starts accumulating planning debt.
+
+Check for:
+- duplicate guidance across root docs, skills, agents, and phase files
+- stale plans
+- dead commands or unused skills
+- outdated handoff notes
+- root file bloat
+- memory files that no workflow actually uses
+
+Output:
+- what should be pruned now
+- what should be archived later
+- what root docs should be shortened
+
+===== FILE: .claude/skills/refresh-state/SKILL.md =====
+---
+name: refresh-state
+description: Update durable memory files after meaningful progress.
+disable-model-invocation: true
+allowed-tools: Read, Write, Edit, Grep, Glob
+---
+
+Use this skill after a planning milestone, implementation slice, or verification pass.
+
+Update only the files that need it:
+- `STATE.md`
+- `PHASE_HANDOFF.md`
+- `docs/ops/phase-progress.md`
+- `docs/decisions/decision-log.md`
+- `docs/ops/known-issues.md`
+
+Rules:
+- summarize, do not dump logs
+- keep updates short
+- record next exact step
+- record blockers and decisions only if they changed
+
+===== FILE: .claude/skills/ship-slice/SKILL.md =====
+---
+name: ship-slice
+description: Implement one small approved slice from the active phase plan.
+argument-hint: [phase-id]
+disable-model-invocation: true
+context: fork
+agent: implementation-builder
+---
+
+Use this skill to implement exactly one small slice from the active phase.
+
+Workflow:
+1. Read `STATE.md` and `phases/$ARGUMENTS/PLAN.md`.
+2. Choose the smallest unfinished slice that produces meaningful progress.
+3. Implement only that slice.
+4. Run the narrowest useful checks.
+5. Summarize:
+   - what changed
+   - what remains
+   - what should be verified next
+6. Do not silently expand scope.
+
+===== FILE: .claude/skills/verify-phase/SKILL.md =====
+---
+name: verify-phase
+description: Verify an active phase against its acceptance criteria and produce a go/no-go result.
+argument-hint: [phase-id]
+disable-model-invocation: true
+context: fork
+agent: verifier
+---
+
+Use this skill after implementation work.
+
+Workflow:
+1. Read `phases/$ARGUMENTS/PLAN.md`.
+2. Inspect relevant code, docs, and current checks.
+3. Run the narrowest useful verification commands.
+4. Write or refresh `docs/verification/$ARGUMENTS.md`.
+5. Return:
+   - pass/fail by acceptance criterion
+   - missing proof
+   - defects or risks
+   - go/no-go
+
+# .claude/settings
+
+===== FILE: .claude/settings.json =====
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm build)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm typecheck)",
+      "Bash(pnpm test)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(node *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./.vercel/**)",
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Bash(curl * | sh)",
+      "Bash(wget * | sh)",
+      "Bash(sudo *)"
+    ]
+  }
+}
+
+===== FILE: .claude/settings.local.json =====
+{
+  "permissions": {
+    "deny": [
+      "Agent(chief-of-staff)",
+      "Agent(e2e-runner)",
+      "Agent(security-reviewer)",
+      "Agent(build-error-resolver)",
+      "Agent(database-reviewer)",
+      "Agent(gsd-ui-checker)",
+      "Agent(python-reviewer)",
+      "Agent(tdd-guide)",
+      "Agent(gsd-ui-auditor)",
+      "Agent(gsd-phase-researcher)",
+      "Agent(kotlin-build-resolver)",
+      "Agent(kotlin-reviewer)",
+      "Agent(code-reviewer)",
+      "Agent(go-reviewer)",
+      "Agent(gsd-research-synthesizer)",
+      "Agent(go-build-resolver)",
+      "Agent(gsd-roadmapper)",
+      "Agent(planner)",
+      "Agent(gsd-verifier)",
+      "Agent(gsd-executor)",
+      "Agent(gsd-plan-checker)",
+      "Agent(architect)",
+      "Agent(gsd-planner)",
+      "Agent(gsd-integration-checker)",
+      "Agent(gsd-debugger)",
+      "Agent(gsd-nyquist-auditor)",
+      "Agent(harness-optimizer)",
+      "Agent(loop-operator)",
+
+      "Skill(dmux-workflows)",
+      "Skill(security-review)",
+      "Skill(tdd-workflow)",
+      "Skill(prompt-optimize)",
+      "Skill(kotlin-build)",
+      "Skill(gsd:discuss-phase)",
+      "Skill(backend-patterns)",
+      "Skill(search-first)",
+      "Skill(strategic-compact)",
+      "Skill(kotlin-review)",
+      "Skill(learn-eval)",
+      "Skill(python-review)",
+      "Skill(e2e)",
+      "Skill(tdd)",
+      "Skill(e2e-testing)",
+      "Skill(claw)",
+      "Skill(resume-session)",
+      "Skill(go-build)",
+      "Skill(go-review)",
+      "Skill(skill-create)",
+      "Skill(aside)",
+      "Skill(save-session)",
+      "Skill(coding-standards)",
+      "Skill(plan)",
+      "Skill(go-test)",
+      "Skill(eval-harness)",
+      "Skill(kotlin-test)",
+      "Skill(gsd:quick)",
+      "Skill(gsd:map-codebase)",
+      "Skill(gsd:research-phase)",
+      "Skill(gsd:list-phase-assumptions)",
+      "Skill(gsd:progress)",
+      "Skill(gsd:new-milestone)",
+      "Skill(gsd:add-tests)",
+      "Skill(gsd:stats)",
+      "Skill(gsd:validate-phase)",
+      "Skill(gsd:insert-phase)",
+      "Skill(gsd:audit-milestone)",
+      "Skill(gsd:new-project)",
+      "Skill(gsd:autonomous)",
+      "Skill(gsd:plan-milestone-gaps)",
+      "Skill(gsd:remove-phase)",
+      "Skill(gsd:set-profile)",
+      "Skill(verification-loop)",
+      "Skill(gsd:resume-work)",
+      "Skill(gsd:complete-milestone)",
+      "Skill(gsd:execute-phase)",
+      "Skill(instinct-import)",
+      "Skill(gsd:debug)",
+      "Skill(gsd:ui-review)",
+      "Skill(gsd:health)",
+      "Skill(gsd:cleanup)",
+      "Skill(gsd:note)",
+      "Skill(gsd:ui-phase)",
+      "Skill(instinct-export)",
+      "Skill(evolve)",
+      "Skill(gradle-build)",
+      "Skill(multi-workflow)",
+      "Skill(gsd:update)",
+      "Skill(gsd:add-phase)",
+      "Skill(multi-execute)",
+      "Skill(projects)",
+      "Skill(gsd:check-todos)",
+      "Skill(gsd:settings)",
+      "Skill(multi-frontend)",
+      "Skill(promote)",
+      "Skill(multi-backend)",
+      "Skill(multi-plan)",
+      "Skill(gsd:help)",
+      "Skill(gsd:join-discord)",
+      "Skill(learn)",
+      "Skill(harness-audit)",
+      "Skill(quality-gate)",
+      "Skill(model-route)",
+      "Skill(update-docs)",
+      "Skill(update-codemaps)",
+      "Skill(orchestrate)",
+      "Skill(loop-status)",
+      "Skill(test-coverage)",
+      "Skill(verify)",
+      "Skill(refactor-clean)",
+      "Skill(checkpoint)",
+      "Skill(loop-start)",
+      "Skill(sessions)",
+      "Skill(code-review)",
+      "Skill(build-fix)",
+      "Skill(eval)",
+      "Skill(pm2)"
+    ]
+  }
+}
+
+# NESTED LOCAL CLAUDE/AGENTS FILES
+
+# FOLLOW-UP NOTE TEMPLATE
+Project type:
+Single repo or monorepo:
+
+Main pain points:
+1.
+2.
+3.
+
+Commands I use often:
+1.
+2.
+3.
+
+Commands I suspect are redundant:
+1.
+2.
+3.
+
+Hooks in use:
+Yes/No
+If yes, which ones:
+
+Subagents in use:
+Yes/No
+If yes, which ones:
+
+Skills in use:
+Yes/No
+If yes, which ones:
+
+How I store ongoing state:
+(e.g. STATE.md, handoff file, chat only, none)
+
+What keeps getting repeated in prompts:
+1.
+2.
+3.
