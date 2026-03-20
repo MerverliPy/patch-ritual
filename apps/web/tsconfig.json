@@ -10,6 +10,12 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@patch-ritual/github": [
+        "packages/github/src/index"
+      ],
+      "@patch-ritual/github/*": [
+        "packages/github/src/*"
       ]
     },
     "allowJs": true,

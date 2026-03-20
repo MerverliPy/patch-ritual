@@ -7,12 +7,30 @@
 | # | Criterion | Status |
 |---|-----------|--------|
 | 1 | Creator can sign in with GitHub | wired — pending manual smoke test |
-| 2 | Creator can select one repository | not started |
-| 3 | Available releases shown with core metadata | adapter layer complete — UI not started |
-| 4 | Selecting a release creates a draft | persistence boundary complete — flow not wired |
-| 5 | Partial source data does not block draft creation | type-level and persistence boundary in place |
+| 2 | Creator can select one repository | complete at UI level |
+| 3 | Available releases shown with core metadata | complete at UI level |
+| 4 | Selecting a release creates a draft | not started |
+| 5 | Partial source data does not block draft creation | persistence boundary in place; import path not wired |
 
 ## Slice Verification Log
+
+### Slice 5 — Repository selection + release list UI (2026-03-20)
+- Files:
+  - `packages/github/src/index.ts`
+  - `apps/web/auth.ts`
+  - dashboard UI files
+  - GitHub API route files
+  - `apps/web/tsconfig.json`
+- Added:
+  - authenticated repo listing endpoint
+  - authenticated release listing endpoint
+  - dashboard workspace UI for repo and release selection
+  - empty/error states
+- Checks:
+  - workspace typecheck — passed clean
+- Notes:
+  - creator can now browse repos and releases
+  - selecting a release does not yet create a persisted draft
 
 ### Slice 4 — DB schema + draft persistence boundary (2026-03-20)
 - Files: `packages/db/package.json`, `packages/db/src/schema.ts`, `packages/db/src/client.ts`, `packages/db/src/index.ts`, root `package.json`
@@ -25,7 +43,6 @@
   - `pnpm -r typecheck` — passed clean
 - Notes:
   - persistence boundary is ready
-  - UI wiring and release import flow are still pending
 
 ### Slice 3 — GitHub integration adapter (2026-03-20)
 - Files: `apps/web/auth.ts`, `packages/github/src/index.ts`
@@ -38,26 +55,19 @@
 - Checks:
   - `pnpm typecheck` — passed clean
   - `pnpm --filter @patch-ritual/web build` — passed clean
-- Notes:
-  - adapter layer is complete
-  - repository selection UI and release list UI are still pending
-  - persistence boundary is complete after Slice 4
 
 ### Slice 2 — GitHub auth wiring (2026-03-20)
 - Files: `apps/web/auth.ts`, `apps/web/src/app/api/auth/[...nextauth]/route.ts`, `apps/web/middleware.ts`
 - Packages: `next-auth@5.0.0-beta.30` (Auth.js v5)
 - Config: GitHub OAuth provider only; JWT session strategy; `/dashboard/*` protected
-- Env: `.env.example` at repo root (AUTH_SECRET, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET)
+- Env: `.env.example` at repo root
 - Check: `pnpm typecheck` — passed clean; `pnpm --filter @patch-ritual/web build` — passed clean
-- Notes: access token threading was completed in Slice 3.
 
 ### Slice 1 — Domain types (2026-03-20)
 - File: `packages/domain/src/index.ts`
 - Exports: Creator, Project, Release, SourceItem
-- Check: `pnpm -r typecheck` — passed clean (7 packages)
-- Notes: SourceItem.title and .body are nullable, satisfying criterion 5 at the type level.
+- Check: `pnpm -r typecheck` — passed clean
 
 ## Remaining Slices
-5. Repository selection + release list UI
 6. Release import: normalize → persist draft
 7. Empty/error states + manual verification
