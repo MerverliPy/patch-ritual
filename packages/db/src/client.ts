@@ -11,8 +11,33 @@ sqlite.exec(`
     repo_full_name TEXT NOT NULL,
     tag_name TEXT NOT NULL,
     title TEXT NOT NULL,
+    release_body TEXT,
+    why_it_matters TEXT,
+    creator_note TEXT,
+    theme TEXT,
+    cover_image_url TEXT,
+    status TEXT NOT NULL DEFAULT 'imported',
     created_at TEXT NOT NULL
   )
 `);
+
+// Add new columns to existing databases that were created before this schema version.
+const existingColumns = new Set(
+  (sqlite.pragma("table_info(drafts)") as Array<{ name: string }>).map(
+    (c) => c.name
+  )
+);
+for (const [col, def] of [
+  ["release_body", "TEXT"],
+  ["why_it_matters", "TEXT"],
+  ["creator_note", "TEXT"],
+  ["theme", "TEXT"],
+  ["cover_image_url", "TEXT"],
+  ["status", "TEXT NOT NULL DEFAULT 'imported'"],
+] as const) {
+  if (!existingColumns.has(col)) {
+    sqlite.exec(`ALTER TABLE drafts ADD COLUMN ${col} ${def}`);
+  }
+}
 
 export const db = drizzle(sqlite, { schema: { drafts } });

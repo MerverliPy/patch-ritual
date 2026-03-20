@@ -15,12 +15,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
+  const b = body as Record<string, unknown>;
   if (
     typeof body !== "object" ||
     body === null ||
-    typeof (body as Record<string, unknown>).repoFullName !== "string" ||
-    typeof (body as Record<string, unknown>).tagName !== "string" ||
-    typeof (body as Record<string, unknown>).title !== "string"
+    typeof b.repoFullName !== "string" ||
+    typeof b.tagName !== "string" ||
+    typeof b.title !== "string"
   ) {
     return NextResponse.json(
       { error: "repoFullName, tagName, and title are required strings" },
@@ -28,17 +29,15 @@ export async function POST(request: Request) {
     );
   }
 
-  const { repoFullName, tagName, title } = body as {
-    repoFullName: string;
-    tagName: string;
-    title: string;
-  };
+  const releaseBody =
+    typeof b.releaseBody === "string" ? b.releaseBody : null;
 
   const draft = insertDraft({
     creatorId: session.user.id,
-    repoFullName,
-    tagName,
-    title,
+    repoFullName: b.repoFullName,
+    tagName: b.tagName,
+    title: b.title,
+    ...(releaseBody !== null ? { releaseBody } : {}),
   });
 
   return NextResponse.json(draft, { status: 201 });

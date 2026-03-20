@@ -6,5 +6,11 @@ export const drafts = sqliteTable("drafts", {
   repoFullName: text("repo_full_name").notNull(),
   tagName: text("tag_name").notNull(),
   title: text("title").notNull(),
+  releaseBody: text("release_body"),
+  whyItMatters: text("why_it_matters"),
+  creatorNote: text("creator_note"),
+  theme: text("theme"),
+  coverImageUrl: text("cover_image_url"),
+  status: text("status").notNull().default("imported"),
   createdAt: text("created_at").notNull(),
 });

@@ -60,7 +60,7 @@ export default function Workspace({ login }: { login: string }) {
     fetch("/api/github/import-draft", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ repoFullName: repo, tagName: release.tag_name, title }),
+      body: JSON.stringify({ repoFullName: repo, tagName: release.tag_name, title, releaseBody: release.body ?? null }),
     })
       .then((r) => r.json())
       .then((data) => {
