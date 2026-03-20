@@ -16,6 +16,12 @@
       ],
       "@patch-ritual/github/*": [
         "packages/github/src/*"
+      ],
+      "@patch-ritual/db": [
+        "packages/db/src/index"
+      ],
+      "@patch-ritual/db/*": [
+        "packages/db/src/*"
       ]
     },
     "allowJs": true,

@@ -7,12 +7,29 @@
 | # | Criterion | Status |
 |---|-----------|--------|
 | 1 | Creator can sign in with GitHub | wired — pending manual smoke test |
-| 2 | Creator can select one repository | complete at UI level |
-| 3 | Available releases shown with core metadata | complete at UI level |
-| 4 | Selecting a release creates a draft | not started |
-| 5 | Partial source data does not block draft creation | persistence boundary in place; import path not wired |
+| 2 | Creator can select one repository | complete |
+| 3 | Available releases shown with core metadata | complete |
+| 4 | Selecting a release creates a draft | complete |
+| 5 | Partial source data does not block draft creation | pending manual edge verification |
 
 ## Slice Verification Log
+
+### Slice 6 — Release import: normalize → persist draft (2026-03-20)
+- Files:
+  - `apps/web/src/app/api/github/import-draft/route.ts`
+  - `apps/web/src/app/dashboard/workspace.tsx`
+  - `apps/web/tsconfig.json`
+  - `apps/web/next.config.ts`
+- Added:
+  - authenticated draft import route
+  - minimal normalization using `release.name ?? release.tag_name`
+  - persisted draft creation via `insertDraft(...)`
+  - UI feedback for import-in-progress and import success
+- Checks:
+  - workspace typecheck — passed clean
+- Notes:
+  - creator can now import a selected release into persisted draft storage
+  - manual smoke test and edge verification still needed
 
 ### Slice 5 — Repository selection + release list UI (2026-03-20)
 - Files:
@@ -28,9 +45,6 @@
   - empty/error states
 - Checks:
   - workspace typecheck — passed clean
-- Notes:
-  - creator can now browse repos and releases
-  - selecting a release does not yet create a persisted draft
 
 ### Slice 4 — DB schema + draft persistence boundary (2026-03-20)
 - Files: `packages/db/package.json`, `packages/db/src/schema.ts`, `packages/db/src/client.ts`, `packages/db/src/index.ts`, root `package.json`
@@ -41,14 +55,9 @@
   - typed `insertDraft(...)` helper
 - Checks:
   - `pnpm -r typecheck` — passed clean
-- Notes:
-  - persistence boundary is ready
 
 ### Slice 3 — GitHub integration adapter (2026-03-20)
 - Files: `apps/web/auth.ts`, `packages/github/src/index.ts`
-- Auth.js:
-  - JWT callback persists `account.access_token` into `token.accessToken`
-  - session callback exposes `session.accessToken`
 - GitHub adapter:
   - `listRepos(accessToken)`
   - `listReleases(accessToken, repoFullName)`
@@ -58,10 +67,10 @@
 
 ### Slice 2 — GitHub auth wiring (2026-03-20)
 - Files: `apps/web/auth.ts`, `apps/web/src/app/api/auth/[...nextauth]/route.ts`, `apps/web/middleware.ts`
-- Packages: `next-auth@5.0.0-beta.30` (Auth.js v5)
 - Config: GitHub OAuth provider only; JWT session strategy; `/dashboard/*` protected
-- Env: `.env.example` at repo root
-- Check: `pnpm typecheck` — passed clean; `pnpm --filter @patch-ritual/web build` — passed clean
+- Checks:
+  - `pnpm typecheck` — passed clean
+  - `pnpm --filter @patch-ritual/web build` — passed clean
 
 ### Slice 1 — Domain types (2026-03-20)
 - File: `packages/domain/src/index.ts`
@@ -69,5 +78,4 @@
 - Check: `pnpm -r typecheck` — passed clean
 
 ## Remaining Slices
-6. Release import: normalize → persist draft
 7. Empty/error states + manual verification

@@ -30,6 +30,9 @@ export default function Workspace({ login }: { login: string }) {
   const [releasesError, setReleasesError] = useState<string | null>(null);
   const [loadingRepos, setLoadingRepos] = useState(true);
   const [loadingReleases, setLoadingReleases] = useState(false);
+  const [importingId, setImportingId] = useState<number | null>(null);
+  const [importResult, setImportResult] = useState<{ releaseId: number; draftId: string } | null>(null);
+  const [importError, setImportError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/api/github/repos")
@@ -44,6 +47,32 @@ export default function Workspace({ login }: { login: string }) {
       .catch(() => setReposError("Failed to load repositories"))
       .finally(() => setLoadingRepos(false));
   }, []);
+
+  function importRelease(repo: string, release: Release) {
+    setImportingId(release.id);
+    setImportResult(null);
+    setImportError(null);
+
+    const title = release.name && release.name !== release.tag_name
+      ? release.name
+      : release.tag_name;
+
+    fetch("/api/github/import-draft", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ repoFullName: repo, tagName: release.tag_name, title }),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.id) {
+          setImportResult({ releaseId: release.id, draftId: data.id });
+        } else {
+          setImportError(data.error ?? "Import failed");
+        }
+      })
+      .catch(() => setImportError("Import failed"))
+      .finally(() => setImportingId(null));
+  }
 
   function selectRepo(fullName: string) {
     setSelectedRepo(fullName);
@@ -95,6 +124,7 @@ export default function Workspace({ login }: { login: string }) {
           {!loadingReleases && !releasesError && releases.length === 0 && (
             <p>No releases found.</p>
           )}
+          {importError && <p>Import error: {importError}</p>}
           <ul>
             {releases.map((release) => (
               <li key={release.id}>
@@ -107,6 +137,16 @@ export default function Workspace({ login }: { login: string }) {
                 )}
                 {release.draft && <> [draft]</>}
                 {release.prerelease && <> [pre-release]</>}
+                {importResult?.releaseId === release.id ? (
+                  <> ✓ imported (draft {importResult.draftId})</>
+                ) : (
+                  <button
+                    onClick={() => importRelease(selectedRepo!, release)}
+                    disabled={importingId === release.id}
+                  >
+                    {importingId === release.id ? "Importing…" : "Import"}
+                  </button>
+                )}
               </li>
             ))}
           </ul>
