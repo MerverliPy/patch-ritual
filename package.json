@@ -1,12 +1,17 @@
 {
   "name": "patch-ritual",
   "private": true,
-  "packageManager": "pnpm@10",
+  "packageManager": "pnpm@10.32.1",
   "scripts": {
     "dev": "pnpm --filter @patch-ritual/web dev",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   }
 }
