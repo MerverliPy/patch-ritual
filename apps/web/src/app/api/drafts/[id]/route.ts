@@ -56,6 +56,22 @@ export async function PATCH(
   if (typeof b.theme === "string") fields.theme = b.theme;
   if (typeof b.coverImageUrl === "string") fields.coverImageUrl = b.coverImageUrl;
 
-  const updated = updateDraft(id, { ...fields, status: "framed" });
+  // Ritual output fields — presence of any triggers "reviewed" status
+  let isReview = false;
+  if (typeof b.openingHook === "string") {
+    fields.openingHook = b.openingHook;
+    isReview = true;
+  }
+  if (typeof b.keyChanges === "string") {
+    fields.keyChanges = b.keyChanges;
+    isReview = true;
+  }
+  if (typeof b.closingPrompt === "string") {
+    fields.closingPrompt = b.closingPrompt;
+    isReview = true;
+  }
+
+  const status = isReview ? "reviewed" : "framed";
+  const updated = updateDraft(id, { ...fields, status });
   return NextResponse.json(updated);
 }
