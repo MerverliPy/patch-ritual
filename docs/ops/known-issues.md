@@ -9,3 +9,5 @@
 ## Update Rule
 Use this file for real technical constraints and active problems.
 Do not use it for generic wishlists.
+
+- Live GitHub OAuth smoke test still pending real runtime credentials

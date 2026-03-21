@@ -10,6 +10,24 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@patch-ritual/github": [
+        "packages/github/src/index"
+      ],
+      "@patch-ritual/github/*": [
+        "packages/github/src/*"
+      ],
+      "@patch-ritual/db": [
+        "packages/db/src/index"
+      ],
+      "@patch-ritual/db/*": [
+        "packages/db/src/*"
+      ],
+      "@patch-ritual/ritual-engine": [
+        "packages/ritual-engine/src/index"
+      ],
+      "@patch-ritual/ritual-engine/*": [
+        "packages/ritual-engine/src/*"
       ]
     },
     "allowJs": true,

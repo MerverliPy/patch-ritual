@@ -28,3 +28,20 @@ export interface SourceItem {
   title: string | null;
   body: string | null;
 }
+
+export type DraftStatus = "imported" | "framed" | "generated" | "reviewed";
+
+export interface Draft {
+  id: string;
+  creatorId: string;
+  repoFullName: string;
+  tagName: string;
+  title: string;
+  releaseBody: string | null;
+  whyItMatters: string | null;
+  creatorNote: string | null;
+  theme: string | null;
+  coverImageUrl: string | null;
+  status: DraftStatus;
+  createdAt: string;
+}
