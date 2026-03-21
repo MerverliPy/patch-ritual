@@ -1,36 +1,33 @@
 # PHASE_HANDOFF.md
 
 ## Session Summary
-Phase 1 is complete and verified GO. The release import loop now exists end-to-end: auth, repo selection, release listing, and persisted draft creation. Build and typecheck pass clean after the better-sqlite3 server bundling fix.
+Phase 2 is complete and verified GO. The full creator draft flow exists end-to-end: import → frame → generate → review/edit → save. Build, typecheck, and 15 unit tests all pass. One build defect was found and fixed during verification.
 
 ## What Was Done
-- Completed Phase 1 slices 1–6
-- Verified all five Phase 1 acceptance criteria as PASS
-- Applied build fix for `better-sqlite3`
-  - `serverExternalPackages: ["better-sqlite3"]`
-  - webpack externals entry in `next.config.ts`
+- Completed Phase 2 (all slices)
+- Verified all 7 Phase 2 acceptance criteria as PASS
+- Applied build fix: added `@patch-ritual/ritual-engine` to `transpilePackages` in `next.config.ts`; removed `.js` extensions from internal imports in `ritual-engine/src/index.ts`
 - Updated:
-  - `docs/verification/phase-01-auth-release-import.md`
+  - `docs/verification/phase-02-creator-draft-ritual-generation.md`
   - `STATE.md`
   - `PHASE_HANDOFF.md`
 
 ## Resume From
-Phase 2 — Creator Draft Flow + Ritual Generation
+Phase 3 — Public Ritual Publishing Loop
 
 ## Exact Next Step
-Create the smallest viable Phase 2 plan for creator framing inputs, fixed-format ritual generation, draft preview/edit flow, and the minimum supporting data shape needed to connect imported drafts to a reviewable ritual draft.
+Create the Phase 3 plan for: public ritual page, publish flow, shareable URL, mobile-safe presentation.
 
 ## Watchouts
-- Keep the ritual format fixed in MVP
-- Do not add multiple templates or modes
-- Do not add publish flow work yet
-- Do not add analytics or audience features
-- Keep Phase 2 focused on creator draft creation and review only
+- Do not add audience reactions or comments (Phase 4)
+- Do not add analytics (Phase 4)
+- Keep the ritual format fixed (openingHook, keyChanges, closingPrompt)
+- The domain `Draft` type is missing `openingHook`/`keyChanges`/`closingPrompt` — update it before those fields are used externally (e.g. public page rendering)
+- `keyChanges` is stored as a JSON string in DB; parse it before rendering
 
 ## Files To Read First
 1. `CLAUDE.md`
 2. `STATE.md`
 3. `ROADMAP.md`
 4. `phases/phase-02-creator-draft-and-ritual-generation/PLAN.md`
-5. `REQUIREMENTS.md`
-6. `docs/verification/phase-01-auth-release-import.md`
+5. `docs/verification/phase-02-creator-draft-ritual-generation.md`
