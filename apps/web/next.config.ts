@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 
 const config: NextConfig = {
-  transpilePackages: ["@patch-ritual/github", "@patch-ritual/db"],
+  transpilePackages: ["@patch-ritual/github", "@patch-ritual/db", "@patch-ritual/ritual-engine"],
   serverExternalPackages: ["better-sqlite3"],
   webpack(webpackConfig, { isServer }) {
     if (isServer) {
