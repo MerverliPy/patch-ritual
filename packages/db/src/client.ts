@@ -34,6 +34,9 @@ for (const [col, def] of [
   ["theme", "TEXT"],
   ["cover_image_url", "TEXT"],
   ["status", "TEXT NOT NULL DEFAULT 'imported'"],
+  ["opening_hook", "TEXT"],
+  ["key_changes", "TEXT"],
+  ["closing_prompt", "TEXT"],
 ] as const) {
   if (!existingColumns.has(col)) {
     sqlite.exec(`ALTER TABLE drafts ADD COLUMN ${col} ${def}`);

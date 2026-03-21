@@ -22,6 +22,12 @@
       ],
       "@patch-ritual/db/*": [
         "packages/db/src/*"
+      ],
+      "@patch-ritual/ritual-engine": [
+        "packages/ritual-engine/src/index"
+      ],
+      "@patch-ritual/ritual-engine/*": [
+        "packages/ritual-engine/src/*"
       ]
     },
     "allowJs": true,

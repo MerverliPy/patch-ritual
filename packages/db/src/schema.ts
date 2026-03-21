@@ -11,6 +11,9 @@ export const drafts = sqliteTable("drafts", {
   creatorNote: text("creator_note"),
   theme: text("theme"),
   coverImageUrl: text("cover_image_url"),
+  openingHook: text("opening_hook"),
+  keyChanges: text("key_changes"),
+  closingPrompt: text("closing_prompt"),
   status: text("status").notNull().default("imported"),
   createdAt: text("created_at").notNull(),
 });
